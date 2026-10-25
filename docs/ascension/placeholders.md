@@ -788,7 +788,6 @@ Use multiple of the same character back-to-back for a longer output, for example
 ```
 
 ### Discord timestamp formatting
-Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 <!-- TODO: link to Discord message documentation once written -->
 
 #### Styles
@@ -809,6 +808,8 @@ Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 ```
 %start_date:'timestamp'%
 %start_date:'timestamp:R'%
+%log_time:'timestamp'%
+%log_time:'timestamp:t'%
 ```
 
 ### Duration formatting
