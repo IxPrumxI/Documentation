@@ -426,7 +426,7 @@ These placeholders are available when formatting console log lines.
 #### `%logger_name%`
 The name of the logger that produced the log message. This may be empty, since not every log message has a logger name.
 
-If the value is empty, nothing is output and the format is not applied. That means a format with extra characters around the name only shows them when a logger name is present.
+This value is nullable and may be empty, consider checking using [Coalesce](#checking-for-empty-placeholders-coalesce).
 
 See [String formatting](#string-formatting) for padding, truncation and case options.
 
@@ -447,7 +447,7 @@ See [Date formatting](#date-formatting) for formatting options.
 Example usage: `%log_time:'ccc HH:mm:ss zzz'%` gives `Sun 13:24:12 UTC`
 
 See also [Discord timestamp formatting](#discord-timestamp-formatting) for `%log_time:'timestamp'%`, which shows the time in each reader's own timezone.
-Discord timestamp formatting would only render correctly in Discord when the console log appender output mode is either `markdown`, `plain` or `off`.
+Discord timestamp formatting would only render correctly in Discord when the console log appender output mode is either `markdown` or `plain` because timestamps cannot be used inside code blocks.
 
 ---
 
