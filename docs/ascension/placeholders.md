@@ -686,8 +686,45 @@ Numbers are rounded half-even by default, so `0.125` formatted with `0.00` gives
 Placeholders that return a date such as `now_date` can be formatted using a datetime formatting string, for example: `ccc HH:mm:ss zzz` in `%now_date:'ccc HH:mm:ss zzz'%`
 
 #### `%date_at_zone:'timezone'%`
-Converts the date to the specified timezone, useful when you wish to display timezone different than the server's
-<!-- TODO: list timezones -->
+Converts the date to the specified timezone, useful when you wish to display a timezone different than the server's.
+
+Example usage: `%now_date_at_zone:'Asia/Tokyo'%`
+
+The timezone is a [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) ID (`Region/City`). IDs are case-sensitive.
+
+:::caution
+An unknown or misspelled timezone does not cause an error, the date is converted to `GMT` instead. If the time looks wrong, check the ID first.
+:::
+
+Common timezones:
+
+| Timezone ID           | Region                | Standard offset | Daylight saving |
+|-----------------------|-----------------------|-----------------|-----------------|
+| `UTC`                 | Coordinated Universal Time | UTC+0      | No              |
+| `Europe/London`       | United Kingdom        | UTC+0           | UTC+1           |
+| `Europe/Paris`        | Central Europe (also `Europe/Berlin`, `Europe/Madrid`, `Europe/Rome`) | UTC+1 | UTC+2 |
+| `Europe/Athens`       | Eastern Europe (also `Europe/Helsinki`) | UTC+2 | UTC+3 |
+| `Europe/Moscow`       | Russia (Moscow)       | UTC+3           | No              |
+| `Asia/Riyadh`         | Saudi Arabia          | UTC+3           | No              |
+| `Asia/Dubai`          | United Arab Emirates  | UTC+4           | No              |
+| `Asia/Kolkata`        | India                 | UTC+5:30        | No              |
+| `Asia/Dhaka`          | Bangladesh            | UTC+6           | No              |
+| `Asia/Bangkok`        | Thailand              | UTC+7           | No              |
+| `Asia/Shanghai`       | China                 | UTC+8           | No              |
+| `Asia/Tokyo`          | Japan                 | UTC+9           | No              |
+| `Australia/Sydney`    | Eastern Australia     | UTC+10          | UTC+11          |
+| `Pacific/Auckland`    | New Zealand           | UTC+12          | UTC+13          |
+| `America/Sao_Paulo`   | Brazil (Brasília)     | UTC-3           | No              |
+| `America/New_York`    | US/Canada Eastern     | UTC-5           | UTC-4           |
+| `America/Chicago`     | US/Canada Central     | UTC-6           | UTC-5           |
+| `America/Denver`      | US/Canada Mountain    | UTC-7           | UTC-6           |
+| `America/Los_Angeles` | US/Canada Pacific     | UTC-8           | UTC-7           |
+| `America/Anchorage`   | Alaska                | UTC-9           | UTC-8           |
+| `Pacific/Honolulu`    | Hawaii                | UTC-10          | No              |
+
+A fixed offset can also be used with the `GMT` prefix, for example `GMT+3` or `GMT-08:00`. Offsets written without the prefix (`+03:00`, `UTC+3`) are not recognized and result in `GMT`.
+
+The full list of IDs can be found [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 #### `%date_to_epoch_seconds%`
 Gets the time since January 1st 1970 ([Epoch time](https://en.wikipedia.org/wiki/Epoch_(computing))) in seconds
