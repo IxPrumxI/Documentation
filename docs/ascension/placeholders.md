@@ -596,8 +596,91 @@ For example:
 %user_isboosting:'Boosting;Not Boosting'%
 ```
 
-<!-- TODO: section for number formatting -->
-<!-- TODO: section for string formatting -->
+### String formatting
+Placeholders which return a string can be formatted using Java's string formatting.
+
+`%string:'format'%`
+
+The format follows this structure: `\%[flags][width][.precision]conversion`
+
+:::info
+Every `%` in the format must be escaped with a backslash (`\%`), otherwise it is read as the end of the placeholder. For example: `%player_primary_group:'\%S'%`
+
+The parts must be in this order: flags, width, then precision (for example `\%-8.3s`). An invalid format makes the placeholder output `Error`.
+:::
+
+If the placeholder returns an empty value, nothing is output and the format is not applied. Use the `text` placeholder to show a fallback instead, for example `%player_prefix:'\%S'|text:'No Prefix'%`.
+
+#### (Useful) Formatting characters
+
+| Symbol | Meaning                      | Example format | Input → Output    |
+|--------|------------------------------|----------------|-------------------|
+| s      | String as-is                 | `\%s`          | `Steve` → `Steve` |
+| S      | String in UPPERCASE          | `\%S`          | `Steve` → `STEVE` |
+| %      | Literal percent sign         | `\%\%`         | → `%`             |
+| n      | Platform-specific line break | `\%n`          | → (new line)      |
+
+#### Width, precision and flags
+
+| Option            | Meaning                                      | Example format | Input → Output         |
+|-------------------|----------------------------------------------|----------------|------------------------|
+| width             | Minimum length, pads with spaces on the left | `\%10s`        | `Steve` → `     Steve` |
+| `-` flag          | Left-justify (use together with a width)     | `\%-10s`       | `Steve` → `Steve     ` |
+| .precision        | Maximum length, longer text is cut off       | `\%.3s`        | `Steve` → `Ste`        |
+| width + precision | Pad to a minimum and cut at a maximum        | `\%-8.3s`      | `Steve` → `Ste     `   |
+
+#### Examples
+
+| Format    | Input     | Output           |
+|-----------|-----------|------------------|
+| `\%S`     | `hello`   | `HELLO`          |
+| `\%12s`   | `hello`   | `       hello`   |
+| `\%-12s`  | `hello`   | `hello       `   |
+| `\%.4s`   | `welcome` | `welc`           |
+
+```
+%player_primary_group:'\%S'%
+%player_name:'\%-12s'%
+%player_name:'\%.3s'%
+```
+
+[Source](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)
+
+### Number formatting
+Placeholders which return a number can be formatted using a [DecimalFormat](https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html) pattern.
+
+`%number:'pattern'%`
+
+:::info
+Both `%` and `'` must be escaped with a backslash inside the pattern (`\%` and `\'`), otherwise they end the placeholder early.
+:::
+
+#### (Useful) Pattern characters
+
+| Symbol | Meaning                                              | Example pattern    | Input → Output          |
+|--------|------------------------------------------------------|--------------------|-------------------------|
+| 0      | Digit, always shown (padded with zeros)              | `000000`           | `291` → `000291`        |
+| #      | Digit, hidden if it would be a leading/trailing zero | `0.#`              | `291` → `291`           |
+| .      | Decimal separator                                    | `0.00`             | `291` → `291.00`        |
+| ,      | Grouping separator (thousands)                       | `#,##0\%`          | `291` → `29,100%`       |
+| E      | Scientific notation                                  | `0.00E0`           | `291` → `2.91E2`        |
+| \%     | Percent, multiplies the value by 100                 | `0\%`              | `291` → `29100%`        |
+| \'     | Quotes text that should be shown as-is               | `0\' members\'`    | `291` → `291 members`   |
+
+The decimal and grouping separators are replaced by the ones used by the server's locale (for example `1.234.567,89` in some locales).
+
+Numbers are rounded half-even by default, so `0.125` formatted with `0.00` gives `0.12`.
+
+#### Examples
+
+```
+%[server:'1234567890']server_member_count:'000000'%
+%[server:'1234567890']server_member_count:'#,##0.00'%
+%[server:'1234567890']server_member_count:'0.00E0'%
+%[server:'1234567890']server_member_count:'0\' members\''%
+```
+
+[Source](https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html)
 
 ### Date formatting
 Placeholders that return a date such as `now_date` can be formatted using a datetime formatting string, for example: `ccc HH:mm:ss zzz` in `%now_date:'ccc HH:mm:ss zzz'%`
