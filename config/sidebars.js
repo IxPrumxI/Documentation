@@ -148,11 +148,63 @@ const sidebars = {
     },
   ],
   ascensionSidebar: [
-    'ascension/index',
-    'ascension/compatibility',
-    'ascension/performance',
-    'ascension/security',
-    'ascension/placeholders',
+    {
+      type: 'doc',
+      id: 'ascension/index',
+      label: 'Ascension Home'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/compatibility',
+      label: 'Compatibility'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/performance',
+      label: 'Performance'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/security',
+      label: 'Security'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/placeholders',
+      label: 'Placeholders'
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Configuration',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/config/discord-messages',
+          label: 'Discord Message Format'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/config/config',
+          label: 'config.yaml'
+        },
+        // {
+        //   type: 'doc',
+        //   id: 'ascension/proxy-config',
+        //   label: 'Proxy config.yaml'
+        // },
+        {
+          type: 'doc',
+          id: 'ascension/config/connections',
+          label: 'connections.yaml'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/config/messages',
+          label: 'messages.yaml'
+        },
+      ],
+    },
     /*{
       type: 'category',
       collapsed: false,
