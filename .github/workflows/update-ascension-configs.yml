@@ -18,8 +18,8 @@ jobs:
       - name: Check out Ascension
         uses: actions/checkout@v4
         with:
-          repository: IxPrumxI/Ascension
-          ref: i18n-config-generation
+          repository: DiscordSRV/Ascension
+          ref: main
           path: ascension-source
       - name: Set up Java
         uses: actions/setup-java@v5
