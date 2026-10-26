@@ -29,8 +29,7 @@ please-wait-before-running-that-command-again:
     minecraft: "&cPlease wait before running that command again"
     discord: "🗒️ Please wait before running that command again"
 target-command-argument-description:
-    minecraft: "Minecraft player username or UUID or Discord user username or user\
-        \ id"
+    minecraft: "Minecraft player username or UUID or Discord user username or user id"
 player-command-argument-description:
     minecraft: "Minecraft player username or UUID"
     discord: "Minecraft player username or UUID"
@@ -38,8 +37,7 @@ discord-user-command-argument-description:
     minecraft: "Discord user username or user id"
     discord: "Discord user"
 player-link-pestering:
-    minecraft: "You have not linked your Discord account yet. Please run /%gamecommand_discord_link_alias%\
-        \ to get started."
+    minecraft: "You have not linked your Discord account yet. Please run /%gamecommand_discord_link_alias% to get started."
 discordsrv-command-description:
     discord: "DiscordSRV Commands"
 minecraft-command-description:
@@ -49,15 +47,11 @@ help-command-description:
 player-list-command-description:
     discord: "View players that are online on the server"
 discord-user-linked-to3rd:
-    minecraft: "&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]\
-        \ &bis linked to &f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]"
-    discord: "✅ **%user_name%** (<@%user_id%>) is linked to **%player_name|text:'<Unknown>'%**\
-        \ (%player_uuid%)"
+    minecraft: "&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover] &bis linked to &f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]"
+    discord: "✅ **%user_name%** (<@%user_id%>) is linked to **%player_name|text:'<Unknown>'%** (%player_uuid%)"
 minecraft-player-linked-to3rd:
-    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]\
-        \ &bis linked to &#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]"
-    discord: "✅ **%player_name|text:'<Unknown>'%** (%player_uuid%) is linked to **%user_name%**\
-        \ (<@%user_id%>)"
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover] &bis linked to &#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]"
+    discord: "✅ **%player_name|text:'<Unknown>'%** (%player_uuid%) is linked to **%user_name%** (<@%user_id%>)"
 linked-to1st:
     minecraft: "&bYou are linked to &a&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]"
     discord: "✅ You are linked to **%player_name|text:'<Unknown>'%** (%player_uuid%)"
@@ -66,15 +60,12 @@ unlink-success:
     discord: "✅ Accounts unlinked"
 unlink-command-description:
     minecraft: "Unlink accounts"
-    discord: "Unlink a Minecraft player's or Discord user's account (only specify\
-        \ one)"
+    discord: "Unlink a Minecraft player's or Discord user's account (only specify one)"
 discord-user-unlinked3rd:
-    minecraft: "&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]\
-        \ &bis &cunlinked"
+    minecraft: "&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover] &bis &cunlinked"
     discord: "❌ **%user_name%** (<@%user_id%>) is __unlinked__"
 minecraft-player-unlinked3rd:
-    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]\
-        \ &bis &cunlinked"
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover] &bis &cunlinked"
     discord: "❌ **%player_name|text:'<Unknown>'%** (%player_uuid%) is __unlinked__"
 already-unlinked1st:
     minecraft: "&bYou are &cunlinked"
@@ -93,14 +84,9 @@ now-linked1st:
 checking-link-status:
     minecraft: "&bChecking linking status..."
 minecraft-auth-linking:
-    minecraft: "&bPlease visit &f[click:open_url:%minecraftauth_link%][hover:show_text:Click\
-        \ to open]%minecraftauth_link_simple%[click]&b to link your account through\
-        \ &fMinecraftAuth"
+    minecraft: "&bPlease visit &f[click:open_url:%minecraftauth_link%][hover:show_text:Click to open]%minecraftauth_link_simple%[click]&b to link your account through &fMinecraftAuth"
 storage-linking:
-    minecraft: "&bJoin our &#5865F2Discord &bserver at [color][click:open_url:%discord_invite%]%discord_invite_simple%[click]\
-        \ &band link your account by running the [color]/%discordcommand_minecraft_alias%\
-        \ link &band entering the code [color][click:copy_to_clipboard:%code%][hover:show_text:Click\
-        \ to copy linking code]%code%[click][hover]"
+    minecraft: "&bJoin our &#5865F2Discord &bserver at [color][click:open_url:%discord_invite%]%discord_invite_simple%[click] &band link your account by running the [color]/%discordcommand_minecraft_alias% link &band entering the code [color][click:copy_to_clipboard:%code%][hover:show_text:Click to copy linking code]%code%[click][hover]"
 invalid-linking-code:
     discord: "❌ Invalid linking code"
 link-command-description:
@@ -113,10 +99,8 @@ user-already-linked3rd:
     minecraft: "&cThat Discord user is already linked"
     discord: "❌ That Discord user is already linked"
 now-linked3rd:
-    minecraft: "&aLink created successfully &b(&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b\
-        \ and &#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]&b)"
-    discord: "✅ Link created successfully\n**%player_name|text:'<Unknown>'%** (%player_uuid%)\
-        \ and **%user_name%** (<@%user_id%>)"
+    minecraft: "&aLink created successfully &b(&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b and &#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]&b)"
+    discord: "✅ Link created successfully\n**%player_name|text:'<Unknown>'%** (%player_uuid%) and **%user_name%** (<@%user_id%>)"
 link-other-command-description:
     discord: "Manually link accounts"
 link-message-command-description:
@@ -133,8 +117,7 @@ bypass-add-command-description:
     minecraft: "Add a player to the list of players who bypass required linking requirements"
     discord: "Add a player to the list of players who bypass required linking requirements"
 bypass-remove-command-description:
-    minecraft: "Remove a player to the list of players who bypass required linking\
-        \ requirements"
+    minecraft: "Remove a player to the list of players who bypass required linking requirements"
     discord: "Remove a player to the list of players who bypass required linking requirements"
 bypass-list-command-description:
     minecraft: "List players who bypass required linking requirements"
@@ -149,15 +132,11 @@ not-bypassing:
     minecraft: "&cNot bypassing"
     discord: "❌ Not bypassing"
 bypass-added:
-    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b\
-        \ has been added to the bypass list"
-    discord: "**%player_name|text:'<Unknown>'%** (%player_uuid%) has been added to\
-        \ the bypass list"
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b has been added to the bypass list"
+    discord: "**%player_name|text:'<Unknown>'%** (%player_uuid%) has been added to the bypass list"
 bypass-removed:
-    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b\
-        \ has been removed from the bypass list"
-    discord: "**%player_name|text:'<Unknown>'%** (%player_uuid%) has been removed\
-        \ from the bypass list"
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b has been removed from the bypass list"
+    discord: "**%player_name|text:'<Unknown>'%** (%player_uuid%) has been removed from the bypass list"
 failed-requirements:
     minecraft: "You did not pass the additional requirements"
 channel-not-found:
@@ -173,11 +152,9 @@ broadcast-minecraft-raw-command-description:
 broadcast-discord-raw-command-description:
     minecraft: "Broadcast a raw json Discord message to the specified Discord channel(s)"
 broadcast-discord-command-description:
-    minecraft: "Broadcast a plain message with Discord formatting to the specified\
-        \ Discord channel(s)"
+    minecraft: "Broadcast a plain message with Discord formatting to the specified Discord channel(s)"
 broadcast-channel-parameter-description:
-    minecraft: "The Discord channel id or in-game channel name to resolve Discord\
-        \ channels from the configuration"
+    minecraft: "The Discord channel id or in-game channel name to resolve Discord channels from the configuration"
 broadcast-message-parameter-description:
     minecraft: "The message to broadcast to Discord"
 debug-command-description:
