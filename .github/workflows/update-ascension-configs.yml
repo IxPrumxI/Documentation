@@ -36,12 +36,12 @@ jobs:
       - name: Copy generated YAML to Documentation
         run: |
           mkdir -p static/config
-          cp ascension-source/config/build/config/BukkitConfig_config.yaml static/config/bukkit-config.yaml
-          cp ascension-source/config/build/config/ModdedConfig_config.yaml static/config/modded-config.yaml
-          cp ascension-source/config/build/config/BungeeConfig_config.yaml static/config/bungee-config.yaml
-          cp ascension-source/config/build/config/VelocityConfig_config.yaml static/config/velocity-config.yaml
-          cp ascension-source/config/build/config/ConnectionConfig_connections.yaml static/config/connections.yaml
-          cp ascension-source/config/build/config/MessagesConfig_messages.yaml static/config/messages.yaml
+          cp ascension-source/build/config/BukkitConfig_config.yaml static/config/bukkit-config.yaml
+          cp ascension-source/build/config/ModdedConfig_config.yaml static/config/modded-config.yaml
+          cp ascension-source/build/config/BungeeConfig_config.yaml static/config/bungee-config.yaml
+          cp ascension-source/build/config/VelocityConfig_config.yaml static/config/velocity-config.yaml
+          cp ascension-source/build/config/ConnectionConfig_connections.yaml static/config/connections.yaml
+          cp ascension-source/build/config/MessagesConfig_messages.yaml static/config/messages.yaml
       - name: Create or update pull request
         uses: peter-evans/create-pull-request@v7
         with:
