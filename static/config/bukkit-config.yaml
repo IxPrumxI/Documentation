@@ -860,6 +860,7 @@ required-linking:
         event: "AsyncPlayerPreLoginEvent"
         
         # The event priority to use for the kick
+        # Available options: LOWEST, LOW, NORMAL, HIGH, HIGHEST (in that order)
         priority: "NORMAL"
     
     # How the player should be blocked from joining the server.
