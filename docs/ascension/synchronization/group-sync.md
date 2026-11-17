@@ -58,7 +58,7 @@ The format is `context: [values]`. The same group with different contexts is tre
 
 This is a feature that requires [LuckPerms](https://luckperms.net).
 
-When <ConfigLink file="config" path="group-sync.sets.include-inherited">`include-inherited`</ConfigLink> is `true`, a player counts as having the group if they inherit it from another group, not just when it is assigned directly. This only works with LuckPerms.
+When <ConfigLink file="config" path="group-sync.sets.include-inherited">`include-inherited`</ConfigLink> is `true`, a player counts as having the group if they inherit it from another group, not just when it is assigned directly. With Vault, whether inherited groups are included depends on how the permissions backend provides groups to Vault; this option has no effect. This only works with LuckPerms.
 
 DiscordSRV will attempt to apply change to inherited groups proactively when `include-inherited` is set to `true` when using LuckPerms based on the Group that was added/removed. But DiscordSRV will not track any possible context changes or changes to groups' parents, for those you will need to rely on retroactive synchronization methods.  
 
