@@ -10,9 +10,9 @@ Configured in <ConfigLink file="config" path="group-sync">`group-sync`</ConfigLi
 
 ## Requirements
 
-- A supported permission plugin: [LuckPerms](https://luckperms.net) (recommended) or Vault-compatible permissions plugins on Bukkit (see [Compatibility](/ascension/compatibility)). LuckPerms is needed for [contexts](#contexts) and [inherited groups](#inherited-groups), Vault ignores both. Without a permission provider, `/discordsrv resync group` replies "No permission provider available." and nothing is synchronized.
+- A supported [permission or group integration](/ascension/compatibility) on the server. Without one, the group sync will synchronizre nothing.
 - The player's accounts must be [linked](/ascension/commands#link).
-- The bot needs **Manage Roles** and the roles must be below the bot's highest role.
+- The bot needs **Manage Roles** and the roles being synchronized (from Minecraft to Discord) must be below the bot's highest role.  
 
 ## Sets and pairs
 
@@ -43,6 +43,8 @@ A pair needs both a group name and a role ID, otherwise it is ignored.
 
 ## Contexts
 
+This is a feature that requires [LuckPerms](https://luckperms.net).
+
 <ConfigLink file="config" path="group-sync.sets.contexts">Contexts</ConfigLink> limit a group to certain situations in LuckPerms (for example a world or server). When set, groups are checked, added and removed only with those contexts.
 
 ```yaml
@@ -54,15 +56,16 @@ The format is `context: [values]`. The same group with different contexts is tre
 
 ## Inherited groups
 
+This is a feature that requires [LuckPerms](https://luckperms.net).
+
 When <ConfigLink file="config" path="group-sync.sets.include-inherited">`include-inherited`</ConfigLink> is `true`, a player counts as having the group if they inherit it from another group, not just when it is assigned directly. This only works with LuckPerms.
 
-Because inherited groups can change without DiscordSRV seeing an event for the group itself, DiscordSRV re-checks affected pairs whenever the related groups change, with Minecraft taking priority. Pairs with `include-inherited: true` are also left out of proactive synchronization.
+DiscordSRV will attempt to apply change to inherited groups proactively when `include-inherited` is set to `true` when using LuckPerms based on the Group that was added/removed. But DiscordSRV will not track any possible context changes or changes to groups' parents, for those you will need to rely on retroactive synchronization methods.  
 
 ## How changes are applied
 
-- Adding or removing a group in your permission plugin adds or removes the role.
-- Adding or removing the role on Discord adds or removes the group.
-- Changes DiscordSRV makes are remembered for 30 seconds so they don't cause a second synchronization.
+Adding/removing a group in permission plugin directly causing a synchronization: isn't supported with Vault/is only supported with LuckPerms
+Adding/removing a role on Discord: is reliant on the user being cached
 
 ## Troubleshooting
 

@@ -7,10 +7,10 @@ Mute Sync keeps **Minecraft mutes** and **Discord timeouts** (or a **muted role*
 See [Synchronization](/ascension/synchronization) for how direction, tie-breakers, the timer and unlink behaviour work.
 
 ## Requirements
-
-- A supported punishment plugin on the server: [AdvancedBan](/ascension/compatibility), [LibertyBans](/ascension/compatibility) or [EssentialsX](/ascension/compatibility) (see [Compatibility](/ascension/compatibility)). Without one, mute sync reports that no punishment integration is available. EssentialsX mutes have no punisher, so `%punishment_punisher%` is empty for them.
+- A supported [punishment integration](/ascension/compatibility) on the server. Without one, mute sync reports that no punishment integration is available.
 - The player must be [linked](/ascension/commands#link).
-- The bot needs the **Guild Moderation** and **Guild Members** gateway intents, plus **Timeout Members** (for timeouts) or **Manage Roles** (for the muted role). Its highest role must be above the users being muted, and the server owner can't be synchronized.
+- For timeouts the bot needs the **Timeout Members** permission and it's highest role must be above the users being timed out, and the server owner can't be timed out. 
+- For the muted role the bot needs the **Manage Roles** permission and it's highest role must be above the muted role, but the bot doesn't need a role above the users being given the role and the server owner can be given the role.  
 
 ## Defaults
 
@@ -60,12 +60,12 @@ Setting `trigger` to `role` or `either` while `tie-breakers.*` is `discord` can 
 
 ## Using a role
 
-The muted role **doesn't block anything by itself**. You must deny the role these permissions in your Discord server (on categories or channels):
+The muted role **doesn't block anything by itself**. You have to deny permissions to categories and/or channels yourself, using permissions such as:  
 
-- Send Messages
-- Create Threads
-- Join Voice
-- Speak
+- Send Messages  
+- Create Threads  
+- Join Voice  
+- Speak  
 - Add Reactions
 
 Role changes are watched when <ConfigLink file="config" path="mute-sync.minecraft-to-discord.action">`minecraft-to-discord.action`</ConfigLink> is `role`, or when the fallback is enabled. In Minecraft, they only cause a mute if <ConfigLink file="config" path="mute-sync.discord-to-minecraft.trigger">`discord-to-minecraft.trigger`</ConfigLink> is `role` or `either`; with the trigger on `timeout` they are only used for the fallback.

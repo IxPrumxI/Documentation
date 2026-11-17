@@ -35,15 +35,23 @@ DiscordSRV has commands in two places:
 
 ## `/discordsrv`
 
-The main command. In game it can also be used as `/discord` and `/dsrv`.
+The main command.
+
+### In game
+
+In game it can also be used as `/discord` and `/dsrv`.
 
 - **In game:** `/discordsrv [subcommand]`
-- **On Discord:** `/discordsrv <subcommand>`
-- **Permission:** [`discordsrv.command.root`](/ascension/permissions#player-commands) in game. On Discord, only server administrators can use it by default.
+- **Permission:** [`discordsrv.command.root`](/ascension/permissions#player-commands)
 
 In game, using the command without a subcommand shows what is configured in <ConfigLink file="config" path="game-command.discord-format">`game-command.discord-format`</ConfigLink>. Each subcommand needs its own permission, which is listed in its section.
 
-If DiscordSRV's configuration fails to load, only [`debug`](#debug), [`version`](#version) and [`reload`](#reload) are available, so you can find and fix the problem.
+If DiscordSRV's configuration fails to load, only [`debug`](#debug), [`version`](#version) and [`reload`](#reload) are available in game, so you can find and fix the problem.
+
+### On Discord
+
+- **On Discord:** `/discordsrv <subcommand>`
+- **Permission:** Only server administrators can use it by default.
 
 On Discord, `/discordsrv` has these subcommands: [`version`](#version), [`debug`](#debug), [`parse`](#parse), [`resync`](#resync), [`linked`](#linked), [`link`](#link), [`unlink`](#unlink), [`bypass`](#bypass), [`execute`](#execute) and [`link-message`](#link-message). Most do the same as their in-game version, and Discord shows the options each one takes as you type the command.
 
@@ -60,8 +68,7 @@ Where `/discordsrv` is registered on Discord:
 
 A slash command on Discord that everyone can use by default. The name can be changed with <ConfigLink file="config" path="discord-command.user-command-alias">`discord-command.user-command-alias`</ConfigLink>.
 
-It has these subcommands: [`playerlist`](#playerlist), `link` (see [`link`](#link)) and `unlink` (see [`unlink`](#unlink)). The last two work on your own account, and only with local linking.
-
+It has these subcommands: [`playerlist`](#playerlist), `link` (see [`link`](#link)) and `unlink` (see [`unlink`](#unlink)). The last two work on your own account, and only when using local linking.
 Where `/minecraft` is registered on Discord:
 
 | Option                                                                      | Description                                                                 |

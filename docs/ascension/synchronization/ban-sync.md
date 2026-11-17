@@ -9,9 +9,10 @@ See [Synchronization](/ascension/synchronization) for how direction, tie-breaker
 
 ## Requirements
 
-- A supported [punishment plugin](/ascension/compatibility) on the server. Without one, ban sync reports that no punishment integration is available.
+- A supported [punishment integration](/ascension/compatibility) on the server. Without one, ban sync reports that no punishment integration is available.
 - The player must be [linked](/ascension/commands#link).
-- The bot needs the **Ban Members** (for bans) or **Manage Roles** (for the banned role) permission. Its highest role must be above the users being banned, and the server owner can't be banned.
+- For discord bans, the bot needs the **Ban Members** permission. Its highest role must be above the users being banned, and the server owner can't be banned.
+- For discord banned role, the bot needs the **Manage Roles** permission, and its highest role must be above the banned role.
 
 ## Defaults
 

@@ -1,11 +1,11 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+# Compatibility
+
 :::danger
 This is documentation for **a future version of DiscordSRV** and information on this page does not apply to DiscordSRV version 1 and may be **inaccurate** in general
 :::
-
-# Compatibility
 
 DiscordSRV requires Java 21 or newer
 
@@ -30,14 +30,12 @@ DiscordSRV requires Java 21 or newer
 <TabItem value='bukkit' label='Bukkit, Spigot, Paper and forks'>
 **Plugin integrations**
 
-{/* TODO: fill in the minimum versions marked TODO, they can't be determined from the integration code */}
-
 | Plugin | Version | Support added by | Provides | Note  |
 | --- | --- | --- | --- |:-------------------------:|
-| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [contexts and inherited groups](synchronization/group-sync) |
-| [Vault] | `1.7+` | DiscordSRV | Groups, prefixes and suffixes, permissions | Lower priority than other integrations. [Group Sync](synchronization/group-sync) works without [contexts](synchronization/group-sync#contexts) or [inherited groups](synchronization/group-sync#inherited-groups) |
+| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [group contexts and inherited groups](synchronization/group-sync) and [luck perms contexts](hooks/lp-contexts)|
+| [Vault] | `1.7+` | DiscordSRV | Groups, prefixes and suffixes, permissions | Lower priority than other integrations. [Group Sync](synchronization/group-sync), does **not** support [contexts](synchronization/group-sync#contexts) or the [inherited groups](synchronization/group-sync#inherited-groups) option |  
 | [PlaceholderAPI] | `2.11.1+` | DiscordSRV | Placeholders | [See Placeholders page](placeholders#bukkit-placeholderapi) |
-| [EssentialsX] | `2.20.1` | DiscordSRV | Chat, mutes, nicknames, vanish | Chat requires EssentialsChat (global chat only)<br/>[Mute Sync](synchronization/mute-sync)<br/>[Nickname Sync](synchronization/nickname-sync) is only supported through EssentialsX |
+| [EssentialsX] | `2.20.1` | DiscordSRV | Chat channels, mutes, nicknames, vanish | Chat requires EssentialsChat (only global chat is supported) |  
 | [AdvancedBan] | `2.3.0+` | DiscordSRV | Bans, mutes | [Ban Sync](synchronization/ban-sync) and [Mute Sync](synchronization/mute-sync) |
 | [LibertyBans] | `1.1.3+` | DiscordSRV | Bans, mutes | [Ban Sync](synchronization/ban-sync) and [Mute Sync](synchronization/mute-sync) |
 | [Chatty] | `2.19.13+` | DiscordSRV | Chat channels | |

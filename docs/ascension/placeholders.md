@@ -1,10 +1,11 @@
 import ConfigLink from '@site/src/components/ConfigLink';
 
+# Placeholders
+
 :::danger
 This is documentation for **a future version of DiscordSRV** and information on this page does not apply to DiscordSRV version 1 and may be **inaccurate** in general
 :::
 
-# Placeholders
 DiscordSRV contains many placeholders which allows you to customize messages entirely to your liking.
 
 Information about which placeholders can be used where can be found in the config.
