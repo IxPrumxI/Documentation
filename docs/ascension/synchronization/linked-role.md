@@ -35,6 +35,8 @@ The bot needs **Manage Roles**, and the roles must be below the bot's highest ro
 
 :::tip Only cache linked users
 <ConfigLink file="config" path="member-caching.role-ids">`member-caching.role-ids`</ConfigLink> limits which Discord members DiscordSRV keeps cached. Set it to your linked role IDs to cache only linked users.
+
+See [Member caching](/ascension/features/member-caching) for the other cache and startup-loading options.
 :::
 
 ## Resyncing

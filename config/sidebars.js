@@ -218,6 +218,11 @@ const sidebars = {
           id: 'ascension/features/invite',
           label: 'Invite'
         },
+        {
+          type: 'doc',
+          id: 'ascension/features/member-caching',
+          label: 'Member Caching'
+        },
       ],
     },
     {
