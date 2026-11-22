@@ -32,7 +32,7 @@ DiscordSRV requires Java 21 or newer
 
 | Plugin | Version | Support added by | Provides | Note  |
 | --- | --- | --- | --- |:-------------------------:|
-| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [group contexts and inherited groups](synchronization/group-sync) and [luck perms contexts](hooks/lp-contexts)|
+| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [group contexts and inherited groups](synchronization/group-sync) and [LuckPerms contexts](hooks/lp-contexts)|  
 | [Vault] | `1.7+` | DiscordSRV | Groups, prefixes and suffixes, permissions | Lower priority than other integrations. [Group Sync](synchronization/group-sync), does **not** support [contexts](synchronization/group-sync#contexts) or the [inherited groups](synchronization/group-sync#inherited-groups) option |  
 | [PlaceholderAPI] | `2.11.1+` | DiscordSRV | Placeholders | [See Placeholders page](placeholders#bukkit-placeholderapi) |
 | [EssentialsX] | `2.20.1` | DiscordSRV | Chat channels, mutes, nicknames, vanish | Chat requires EssentialsChat (only global chat is supported) |  

@@ -6,13 +6,17 @@ Ban Sync keeps **Minecraft bans** and **Discord bans** (or a **banned role**) th
 
 See [Synchronization](/ascension/synchronization) for how direction, tie-breakers, the timer and unlink behaviour work.
 
+:::danger  
+Beaware of who can unban/unrole players and users in Discord and in-game.  
+Anyone who can remove the banned role can unban a player in-game, and anyone who can unban in-game can remove the Discord ban.  
+:::  
 
 ## Requirements
 
 - A supported [punishment integration](/ascension/compatibility) on the server. Without one, ban sync reports that no punishment integration is available.
 - The player must be [linked](/ascension/commands#link).
-- For discord bans, the bot needs the **Ban Members** permission. Its highest role must be above the users being banned, and the server owner can't be banned.
-- For discord banned role, the bot needs the **Manage Roles** permission, and its highest role must be above the banned role.
+- For Discord bans, the bot needs the **Ban Members** permission. It's highest role must be above the users being banned, and the server owner can't be banned.  
+- For Discord banned role, the bot needs the **Manage Roles** permission, and it's highest role must be above the banned role.  
 
 ## Defaults
 
@@ -49,10 +53,6 @@ What happens in Minecraft when someone is banned on Discord.
 | <ConfigLink file="config" path="ban-sync.discord-to-minecraft.kick-reason">`kick-reason`</ConfigLink> | see above | The message shown when an online player is kicked because of the ban                           |
 
 Bans created from Discord are **permanent** in Minecraft. They are lifted when the Discord ban is removed.
-
-:::danger
-Anyone who can remove the banned role can unban a player in-game, and anyone who can unban in-game can remove the discord ban.
-:::
 
 ## Using a role
 

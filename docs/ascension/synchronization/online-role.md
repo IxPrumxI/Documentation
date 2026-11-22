@@ -30,7 +30,7 @@ Configured in <ConfigLink file="config" path="online-role">`online-role`</Config
 - **Join:** the role is added after <ConfigLink file="config" path="online-role.role-ids">`delay-adding-role-by-ms`</ConfigLink>.
 - **Leave:** the role is removed.
 - **Vanish / unvanish:** the role is removed or added (unless vanished players are given the role).
-- **Server shutdown:** the role is removed from **every** member who has it, waiting up to 10 seconds for all  the member roels to be removed.
+- **Server shutdown:** the role is removed from **every** member who has it, waiting up to 10 seconds for all the member roles to be removed.  
 - **Server start and DiscordSRV reload:** the role is removed from members whose player isn't online, which cleans up after a crash or if removing roles during server shutdown takes too long.  
 
 :::caution

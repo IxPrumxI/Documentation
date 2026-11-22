@@ -10,7 +10,7 @@ Configured in <ConfigLink file="config" path="group-sync">`group-sync`</ConfigLi
 
 ## Requirements
 
-- A supported [permission or group integration](/ascension/compatibility) on the server. Without one, the group sync will synchronizre nothing.
+- A supported [permission or group integration](/ascension/compatibility) on the server. Without one, the group sync will synchronize nothing.  
 - The player's accounts must be [linked](/ascension/commands#link).
 - The bot needs **Manage Roles** and the roles being synchronized (from Minecraft to Discord) must be below the bot's highest role.  
 
